@@ -25,7 +25,7 @@ A social network platform for sharing AI-generated images, built with Next.js, T
 1. Clone the repository:
 
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/while-basic/ai-social-network.git
 cd ai-social-network
 ```
 
