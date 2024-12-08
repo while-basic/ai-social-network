@@ -11,6 +11,7 @@ import { toast } from "@/components/ui/use-toast"
 interface Profile {
   id: string
   name: string | null
+  avatar_url: string | null
 }
 
 interface Post {
@@ -43,9 +44,10 @@ export default function GalleryPage() {
           image_url,
           created_at,
           user_id,
-          profiles (
+          profiles:profiles!posts_user_id_fkey (
             id,
-            name
+            name,
+            avatar_url
           )
         `)
         .order("created_at", { ascending: false })
@@ -55,8 +57,9 @@ export default function GalleryPage() {
         throw error
       }
 
-      console.log("Posts data:", data)
-      setPosts(data as Post[] || [])
+      const typedData = (data || []) as unknown as Post[]
+      console.log("Posts data:", typedData)
+      setPosts(typedData)
     } catch (error) {
       console.error("Error details:", error)
       if (error instanceof Error) {

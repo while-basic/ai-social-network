@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Home, PlusSquare, User, Image, ArrowLeft } from "lucide-react"
+import { Home, PlusSquare, User, ImageIcon, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
 export function Header() {
@@ -104,7 +104,7 @@ export function Footer() {
             className="flex-col h-auto py-2"
           >
             <Link href="/feed">
-              <Image className="h-5 w-5" alt="Feed" />
+              <ImageIcon className="h-5 w-5" />
               <span className="text-xs mt-1">Feed</span>
             </Link>
           </Button>
